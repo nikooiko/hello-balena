@@ -1,0 +1,21 @@
+{
+  "name": "hello-balena",
+  "version": "1.0.0",
+  "description": "This is an example to experiment with balena",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikooiko/hello-balena"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}
