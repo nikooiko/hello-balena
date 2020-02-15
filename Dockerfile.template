@@ -1,11 +1,11 @@
 FROM balenalib/%%BALENA_ARCH%%-node:10.19.0-stretch-build as build
-COPY package.json package.json
-COPY package-lock.json package-lock.json
+COPY server/package.json package.json
+COPY server/package-lock.json package-lock.json
 RUN npm install --production
 
 FROM balenalib/%%BALENA_ARCH%%-node:10.19.0-stretch-run
-COPY --from=build ./node_modules ./app/
-COPY . app/
-WORKDIR app/
+COPY --from=build ./node_modules ./server/node_modules
+COPY ./server ./server
+WORKDIR server
 
 CMD ["npm", "start"]
